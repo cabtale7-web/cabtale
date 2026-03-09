@@ -1,0 +1,2 @@
+C:/Users/dctr1/Desktop/Cabtale/Cabtale_driver/android/app/.cxx/RelWithDebInfo/573g1w6j/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/dctr1/Desktop/Cabtale/Cabtale_driver/android/app/.cxx/RelWithDebInfo/573g1w6j/x86_64/CMakeFiles/rebuild_cache.dir

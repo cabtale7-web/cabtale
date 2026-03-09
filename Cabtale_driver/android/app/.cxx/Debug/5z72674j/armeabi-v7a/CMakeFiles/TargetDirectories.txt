@@ -1,0 +1,2 @@
+C:/Users/dctr1/Downloads/thelocalride full sources code 2 (1)/thelocalride full sources code/HexaRide-Driver-app-release-1.8/android/app/.cxx/Debug/5z72674j/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/dctr1/Downloads/thelocalride full sources code 2 (1)/thelocalride full sources code/HexaRide-Driver-app-release-1.8/android/app/.cxx/Debug/5z72674j/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,45 @@
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ride_sharing_user_app/util/styles.dart';
+
+class DottedBorderBox extends StatelessWidget {
+  final double? height;
+  final double? width;
+  final Function() onTap;
+  const DottedBorderBox({super.key, required this.onTap, this.height=100, this.width=100});
+
+  @override
+  Widget build(BuildContext context) {
+    return DottedBorder(
+      options: const RoundedRectDottedBorderOptions(
+        radius: Radius.circular(10),
+        color: Colors.grey,
+        strokeWidth: 1,
+        dashPattern: [8.0, 4.0],
+      ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: SizedBox(height: height, width: width,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.cloud_upload_rounded,
+                  color: Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.6),
+                  size: 30,
+                ),
+                const SizedBox(height: 5,),
+                Text("upload_file".tr,
+                  style: textMedium.copyWith(fontSize: 12,
+                    color: Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.6),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

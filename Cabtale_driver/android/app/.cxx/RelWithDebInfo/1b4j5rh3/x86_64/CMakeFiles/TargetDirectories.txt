@@ -1,0 +1,2 @@
+C:/Users/dctr1/Downloads/thelocalride full sources code 2 (1)/thelocalride full sources code/LocalRide Driver/android/app/.cxx/RelWithDebInfo/1b4j5rh3/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/dctr1/Downloads/thelocalride full sources code 2 (1)/thelocalride full sources code/LocalRide Driver/android/app/.cxx/RelWithDebInfo/1b4j5rh3/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,51 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "cabtale-4f2d2",
+          "appId": "1:837923389532:android:93dc6bf38958cf74162699",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "cabtale-4f2d2",
+          "configurations": {
+            "android": "1:837923389532:android:93dc6bf38958cf74162699",
+            "ios": "1:837923389532:ios:ffdda0b128462d56162699",
+            "macos": "1:837923389532:ios:cb7e2ac2670759ca162699",
+            "web": "1:837923389532:web:072f45606e5d7b45162699",
+            "windows": "1:837923389532:web:0376bec9c3b6b329162699"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "apphosting": {
+    "backendId": "my-web-app",
+    "rootDir": "/",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "functions"
+    ]
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "My App",
+        "supportEmail": "support@undefined.firebaseapp.com"
+      }
+    }
+  }
+}

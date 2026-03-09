@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+import 'package:ride_sharing_user_app/util/app_constants.dart';
+
+ThemeData darkTheme({Color primary = AppConstants.darkPrimary}) => ThemeData(
+  fontFamily: AppConstants.fontFamily,
+  brightness: Brightness.dark,
+  primaryColor: primary,
+  primaryColorDark: const Color(0xFF384B70),
+  scaffoldBackgroundColor: const Color(0xFF121212),
+  cardColor: const Color(0xFF1E2230),
+  hintColor: const Color(0xFF9CA3AF),
+  canvasColor: const Color(0xFF1C1F1F),
+  shadowColor: Colors.black.withOpacity(0.3),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      foregroundColor: primary,
+      textStyle: const TextStyle(fontWeight: FontWeight.w500),
+    ),
+  ),
+  colorScheme: ColorScheme.dark(
+    primary: primary,
+    onPrimary: const Color(0xFFFFFFFF),
+    primaryContainer: const Color(0xFF4B5F8A),
+    onPrimaryContainer: const Color(0xFFDCE1F0),
+    secondary: const Color(0xFF6C8CD5),
+    onSecondary: const Color(0xFF10131E),
+    secondaryContainer: const Color(0xFF28314A),
+    onSecondaryContainer: const Color(0xFFD8E1FF),
+    tertiary: const Color(0xFF9BB6FF),
+    onTertiary: const Color(0xFF0E1320),
+    tertiaryContainer: const Color(0xFF32416A),
+    onTertiaryContainer: const Color(0xFFD6DEFF),
+    surface: const Color(0xFF181B24),
+    onSurface: const Color(0xFFEAEAEA),
+    surfaceTint: const Color(0xFF384B70),
+    surfaceContainer: const Color(0xFF202533),
+    error: const Color(0xFFFF5C5C),
+    onError: const Color(0xFFFFFFFF),
+    errorContainer: const Color(0xFF3B0000),
+    onErrorContainer: const Color(0xFFFFE4E4),
+    outline: const Color(0xFFFFFFFF),
+    shadow: const Color(0xFF0E1018),
+    secondaryFixedDim: const Color(0xFF6271A3),
+  ),
+  textTheme: const TextTheme(
+    displayLarge: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFFEAEAEA)),
+    displayMedium: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFFD0D3DB)),
+    displaySmall: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFFBFC3CE)),
+    bodyLarge: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFFDEE2E9)),
+    bodyMedium: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFFBAC2D8)),
+    bodySmall: TextStyle(fontWeight: FontWeight.w400, color: Color(0xFF9FA8C3)),
+  ),
+);
