@@ -41,51 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyADpyN9eaCSSfTkWzEZJf_13AOEBS3A49E',
-    appId: '1:837923389532:web:072f45606e5d7b45162699',
-    messagingSenderId: '837923389532',
-    projectId: 'cabtale-4f2d2',
-    authDomain: 'cabtale-4f2d2.firebaseapp.com',
-    storageBucket: 'cabtale-4f2d2.firebasestorage.app',
-    measurementId: 'G-WMFQRX65NW',
+    apiKey: 'AIzaSyDsmQl4bCItrpTaMp6ahkTnNiuKvbGo8g8',
+    appId: '1:556271392691:web:f734ad612ca7c8ec5cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    authDomain: 'cabtale-7.firebaseapp.com',
+    storageBucket: 'cabtale-7.firebasestorage.app',
+    measurementId: 'G-KQ5Q20WRCC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDSEiHQnHLBnOqJKCmd8PVSyLlyRxwHIig',
-    appId: '1:837923389532:android:93dc6bf38958cf74162699',
-    messagingSenderId: '837923389532',
-    projectId: 'cabtale-4f2d2',
-    storageBucket: 'cabtale-4f2d2.firebasestorage.app',
+    apiKey: 'AIzaSyDPo6PTAcXY_lbT5YYwD82NWNxOO4lPHmk',
+    appId: '1:556271392691:android:72322f6427b05b005cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC1b3HL60IHIEnP-6oYffWggfrnzAzfCU0',
-    appId: '1:837923389532:ios:ffdda0b128462d56162699',
-    messagingSenderId: '837923389532',
-    projectId: 'cabtale-4f2d2',
-    storageBucket: 'cabtale-4f2d2.firebasestorage.app',
-    iosClientId: '837923389532-ni8hljfpo3hd7oj8em4jm5mulqh44729.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDaDWZScqIbN7rttzNUZF6WDdnXfzuA7uo',
+    appId: '1:556271392691:ios:8989c050d610ccca5cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
     iosBundleId: 'com.cabtale.customer',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC1b3HL60IHIEnP-6oYffWggfrnzAzfCU0',
-    appId: '1:837923389532:ios:cb7e2ac2670759ca162699',
-    messagingSenderId: '837923389532',
-    projectId: 'cabtale-4f2d2',
-    storageBucket: 'cabtale-4f2d2.firebasestorage.app',
-    iosClientId: '837923389532-iukjmcaeo3ofukhcn738jkhgsp0en363.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDaDWZScqIbN7rttzNUZF6WDdnXfzuA7uo',
+    appId: '1:556271392691:ios:587384b3619dbb865cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
     iosBundleId: 'com.sixamtech.ridesharinguser.rideSharingUserApp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyADpyN9eaCSSfTkWzEZJf_13AOEBS3A49E',
-    appId: '1:837923389532:web:0376bec9c3b6b329162699',
-    messagingSenderId: '837923389532',
-    projectId: 'cabtale-4f2d2',
-    authDomain: 'cabtale-4f2d2.firebaseapp.com',
-    storageBucket: 'cabtale-4f2d2.firebasestorage.app',
-    measurementId: 'G-PN89HCR54B',
+    apiKey: 'AIzaSyDsmQl4bCItrpTaMp6ahkTnNiuKvbGo8g8',
+    appId: '1:556271392691:web:0813d285599785305cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    authDomain: 'cabtale-7.firebaseapp.com',
+    storageBucket: 'cabtale-7.firebasestorage.app',
+    measurementId: 'G-220L0Z0F0M',
   );
 
 }

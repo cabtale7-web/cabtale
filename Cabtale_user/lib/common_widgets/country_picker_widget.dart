@@ -7,6 +7,7 @@ class CodePickerWidget extends StatefulWidget {
   final ValueChanged<CountryCode>? onInit;
   final String? initialSelection;
   final List<String>? favorite;
+  final bool localizeCountries;
   final TextStyle? textStyle;
   final EdgeInsetsGeometry? padding;
   final bool? showCountryOnly;
@@ -41,6 +42,7 @@ class CodePickerWidget extends StatefulWidget {
     this.onInit,
     this.initialSelection,
     this.favorite = const [],
+    this.localizeCountries = true,
     this.textStyle,
     this.padding = const EdgeInsets.all(8.0),
     this.showCountryOnly = false,
@@ -108,8 +110,17 @@ class _CodePickerWidgetState extends State<CodePickerWidget> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    elements = elements!.map((e) => e.localize(context)).toList();
-    _onInit(selectedItem!);
+    if (widget.localizeCountries) {
+      elements = elements!.map((e) => e.localize(context)).toList();
+      favoriteElements =
+          favoriteElements!.map((e) => e.localize(context)).toList();
+      if (selectedItem != null) {
+        selectedItem = selectedItem!.localize(context);
+      }
+    }
+    if (selectedItem != null) {
+      _onInit(selectedItem!);
+    }
   }
 
   @override

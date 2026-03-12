@@ -55,10 +55,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
     if (auth.getLoginCountryCode().isNotEmpty) {
       auth.countryDialCode = auth.getLoginCountryCode();
-    } else if (splash.config?.countryCode != null) {
-      auth.countryDialCode = CountryCode
-              .fromCountryCode(splash.config!.countryCode!)
-          .dialCode!;
+    } else {
+      auth.countryDialCode = CountryCode.fromCountryCode('IN').dialCode!;
     }
 
     // Put initial focus
@@ -115,8 +113,13 @@ class _SignInScreenState extends State<SignInScreen> {
     auth.login(auth.countryDialCode, phone, password);
   }
 
-  bool _anyLoading(AuthController a, ProfileController p, RideController r, LocationController l) {
-    return a.isLoading || a.updateFcm || p.isLoading || r.isLoading || l.lastLocationLoading;
+  bool _anyLoading(AuthController a, ProfileController p, RideController r,
+      LocationController l) {
+    return a.isLoading ||
+        a.updateFcm ||
+        p.isLoading ||
+        r.isLoading ||
+        l.lastLocationLoading;
   }
 
   @override
@@ -131,13 +134,16 @@ class _SignInScreenState extends State<SignInScreen> {
         body: GetBuilder<AuthController>(builder: (authController) {
           return GetBuilder<ProfileController>(builder: (profileController) {
             return GetBuilder<RideController>(builder: (rideController) {
-              return GetBuilder<LocationController>(builder: (locationController) {
-                final isLoading = _anyLoading(authController, profileController, rideController, locationController);
+              return GetBuilder<LocationController>(
+                  builder: (locationController) {
+                final isLoading = _anyLoading(authController, profileController,
+                    rideController, locationController);
 
                 return Center(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
+                      padding:
+                          const EdgeInsets.all(Dimensions.paddingSizeLarge),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -153,7 +159,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               fontSize: Dimensions.fontSizeLarge,
                             ),
                           ),
-                          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.1),
 
                           Center(
                             child: Column(
@@ -173,7 +180,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                 //   textAlign: TextAlign.center,
                                 //   style: textRegular.copyWith(color: Theme.of(context).hintColor),
                                 // ),
-                                const SizedBox(height: Dimensions.paddingSizeLarge),
+                                const SizedBox(
+                                    height: Dimensions.paddingSizeLarge),
                               ],
                             ),
                           ),
@@ -187,15 +195,21 @@ class _SignInScreenState extends State<SignInScreen> {
                                       TextFieldWidget(
                                         hintText: 'phone'.tr,
                                         inputType: TextInputType.number,
-                                        countryDialCode: authController.countryDialCode,
+                                        countryDialCode:
+                                            authController.countryDialCode,
                                         controller: phoneController,
                                         focusNode: phoneNode,
-                                        onCountryChanged: (CountryCode countryCode) {
-                                          authController.countryDialCode = countryCode.dialCode!;
-                                          authController.setCountryCode(countryCode.dialCode!);
+                                        onCountryChanged:
+                                            (CountryCode countryCode) {
+                                          authController.countryDialCode =
+                                              countryCode.dialCode!;
+                                          authController.setCountryCode(
+                                              countryCode.dialCode!);
                                         },
                                       ),
-                                      const SizedBox(height: Dimensions.paddingSizeDefault),
+                                      const SizedBox(
+                                          height:
+                                              Dimensions.paddingSizeDefault),
                                     ],
                                   )
                                 : Column(
@@ -214,25 +228,44 @@ class _SignInScreenState extends State<SignInScreen> {
                                       Row(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+                                            padding: const EdgeInsets.all(
+                                                Dimensions.paddingSizeSmall),
                                             child: InkWell(
-                                              onTap: () => authController.toggleRememberMe(),
+                                              onTap: () => authController
+                                                  .toggleRememberMe(),
                                               child: Row(
                                                 children: [
                                                   SizedBox(
                                                     width: 20.0,
                                                     child: Checkbox(
-                                                      checkColor: Theme.of(context).primaryColor,
-                                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                                                      activeColor: Theme.of(context).primaryColor.withOpacity(.125),
-                                                      value: authController.isActiveRememberMe,
-                                                      onChanged: (bool? _) => authController.toggleRememberMe(),
+                                                      checkColor:
+                                                          Theme.of(context)
+                                                              .primaryColor,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5)),
+                                                      activeColor: Theme.of(
+                                                              context)
+                                                          .primaryColor
+                                                          .withOpacity(.125),
+                                                      value: authController
+                                                          .isActiveRememberMe,
+                                                      onChanged: (bool? _) =>
+                                                          authController
+                                                              .toggleRememberMe(),
                                                     ),
                                                   ),
-                                                  const SizedBox(width: Dimensions.paddingSizeExtraSmall),
+                                                  const SizedBox(
+                                                      width: Dimensions
+                                                          .paddingSizeExtraSmall),
                                                   Text(
                                                     'remember'.tr,
-                                                    style: textRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                                    style: textRegular.copyWith(
+                                                        fontSize: Dimensions
+                                                            .fontSizeSmall),
                                                   ),
                                                 ],
                                               ),
@@ -242,19 +275,24 @@ class _SignInScreenState extends State<SignInScreen> {
                                           Align(
                                             alignment: Alignment.centerRight,
                                             child: TextButton(
-                                              onPressed: () => Get.to(() => const ForgotPasswordScreen()),
+                                              onPressed: () => Get.to(() =>
+                                                  const ForgotPasswordScreen()),
                                               child: Text(
                                                 'forgot_password'.tr,
                                                 style: textRegular.copyWith(
-                                                  fontSize: Dimensions.fontSizeSmall,
-                                                  color: Theme.of(context).primaryColor,
+                                                  fontSize:
+                                                      Dimensions.fontSizeSmall,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(height: Dimensions.paddingSizeDefault),
+                                      const SizedBox(
+                                          height:
+                                              Dimensions.paddingSizeDefault),
                                     ],
                                   ),
                           ),
@@ -276,16 +314,23 @@ class _SignInScreenState extends State<SignInScreen> {
                                           onPressed: _goBack,
                                           radius: 10,
                                           height: 45,
-                                          backgroundColor: Theme.of(context).cardColor,
-                                          textColor: Theme.of(context).primaryColor,
+                                          backgroundColor:
+                                              Theme.of(context).cardColor,
+                                          textColor:
+                                              Theme.of(context).primaryColor,
                                           showBorder: true,
-                                          borderColor: Theme.of(context).primaryColor,
+                                          borderColor:
+                                              Theme.of(context).primaryColor,
                                         ),
                                       ),
-                                    if (_currentStep == 1) const SizedBox(width: Dimensions.paddingSizeDefault),
+                                    if (_currentStep == 1)
+                                      const SizedBox(
+                                          width: Dimensions.paddingSizeDefault),
                                     Expanded(
                                       child: ButtonWidget(
-                                        buttonText: _currentStep == 0 ? 'next'.tr : 'log_in'.tr,
+                                        buttonText: _currentStep == 0
+                                            ? 'next'.tr
+                                            : 'log_in'.tr,
                                         onPressed: () => _currentStep == 0
                                             ? _goNext(authController)
                                             : _login(authController),
@@ -303,7 +348,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const SizedBox(width: Dimensions.paddingSizeSmall),
+                                const SizedBox(
+                                    width: Dimensions.paddingSizeSmall),
                                 GetBuilder<AuthController>(builder: (a) {
                                   return a.isLoading
                                       ? SpinKitCircle(
@@ -313,19 +359,25 @@ class _SignInScreenState extends State<SignInScreen> {
                                       : Flexible(
                                           fit: FlexFit.loose,
                                           child: ButtonWidget(
-                                            buttonText: 'Become a Driver / ड्राइवर बनें',
-                                            onPressed: () => launchUrlString('https://cabtale.com/contact-us/'),
+                                            buttonText:
+                                                'Become a Driver / ड्राइवर बनें',
+                                            onPressed: () => launchUrlString(
+                                                'https://cabtale.com/contact-us/'),
                                             radius: 10,
                                           ),
                                         );
                                 }),
                               ],
                             ),
-                            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                            SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.1),
                             InkWell(
-                              onTap: () => Get.to(() => const PolicyViewerScreen()),
+                              onTap: () =>
+                                  Get.to(() => const PolicyViewerScreen()),
                               child: Padding(
-                                padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
+                                padding: const EdgeInsets.all(
+                                    Dimensions.paddingSizeDefault),
                                 child: Text(
                                   "terms_and_condition".tr,
                                   style: textMedium.copyWith(

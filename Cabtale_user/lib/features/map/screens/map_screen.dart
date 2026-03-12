@@ -212,7 +212,18 @@ class _MapScreenState extends State<MapScreen> with WidgetsBindingObserver{
               },
             ),
             body: GetBuilder<MapController>(builder: (mapController) {
+              final rideState = Get.find<RideController>().currentRideState;
+              final parcelState = Get.find<ParcelController>().currentParcelState;
+              final initialExpansionFactor = widget.fromScreen == MapScreenType.location
+                  ? 1.0
+                  : (rideState == RideState.initial ||
+                          rideState == RideState.riseFare ||
+                          rideState == RideState.findingRider ||
+                          parcelState == ParcelDeliveryState.findingRider)
+                      ? 0.45
+                      : 1.0;
               return ExpandableBottomSheet(key: key,
+                initialExpansionFactor: initialExpansionFactor,
                 background: GetBuilder<RideController>(builder: (rideController) {
                   return Stack(children: [
                     Padding(

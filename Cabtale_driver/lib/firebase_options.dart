@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,46 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDFN-73p8zKVZbA0i5DtO215XzAb-xuGSE',
-    appId: '1:1000163153346:web:4f702a4b5adbd5c906b25b',
-    messagingSenderId: '1000163153346',
-    projectId: 'ammart-8885e',
-    authDomain: 'ammart-8885e.firebaseapp.com',
-    databaseURL: 'https://ammart-8885e-default-rtdb.firebaseio.com',
-    storageBucket: 'ammart-8885e.appspot.com',
-    measurementId: 'G-L1GNL2YV61',
+    apiKey: 'AIzaSyDsmQl4bCItrpTaMp6ahkTnNiuKvbGo8g8',
+    appId: '1:556271392691:web:f734ad612ca7c8ec5cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    authDomain: 'cabtale-7.firebaseapp.com',
+    storageBucket: 'cabtale-7.firebasestorage.app',
+    measurementId: 'G-KQ5Q20WRCC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCic6Mw3RRPFcimXhwGidwhCN0tXY7HFFc',
-    appId: '1:1000163153346:android:9d8caf29b912e11606b25b',
-    messagingSenderId: '1000163153346',
-    projectId: 'ammart-8885e',
-    databaseURL: 'https://ammart-8885e-default-rtdb.firebaseio.com',
-    storageBucket: 'ammart-8885e.appspot.com',
+    apiKey: 'AIzaSyDPo6PTAcXY_lbT5YYwD82NWNxOO4lPHmk',
+    appId: '1:556271392691:android:b6e3d0dba26adf625cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDjxRDIuTc6ErANoftU-FtgLBSUxMlLCeA',
-    appId: '1:1000163153346:ios:012d27ec8b417b2706b25b',
-    messagingSenderId: '1000163153346',
-    projectId: 'ammart-8885e',
-    databaseURL: 'https://ammart-8885e-default-rtdb.firebaseio.com',
-    storageBucket: 'ammart-8885e.appspot.com',
-    androidClientId: '1000163153346-8h3825qftiorhelafakqhl559fubeteb.apps.googleusercontent.com',
-    iosClientId: '1000163153346-mu5bujn5d21bt3vkii5lel4ihml97qmj.apps.googleusercontent.com',
-    iosBundleId: 'com.sixamtech.ridesharinguser.rideSharingUserApp',
+    apiKey: 'AIzaSyDaDWZScqIbN7rttzNUZF6WDdnXfzuA7uo',
+    appId: '1:556271392691:ios:aa55215d0090d0cf5cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
+    iosBundleId: 'com.cabtale.driver',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDjxRDIuTc6ErANoftU-FtgLBSUxMlLCeA',
-    appId: '1:1000163153346:ios:012d27ec8b417b2706b25b',
-    messagingSenderId: '1000163153346',
-    projectId: 'ammart-8885e',
-    databaseURL: 'https://ammart-8885e-default-rtdb.firebaseio.com',
-    storageBucket: 'ammart-8885e.appspot.com',
-    androidClientId: '1000163153346-8h3825qftiorhelafakqhl559fubeteb.apps.googleusercontent.com',
-    iosClientId: '1000163153346-mu5bujn5d21bt3vkii5lel4ihml97qmj.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDaDWZScqIbN7rttzNUZF6WDdnXfzuA7uo',
+    appId: '1:556271392691:ios:587384b3619dbb865cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    storageBucket: 'cabtale-7.firebasestorage.app',
     iosBundleId: 'com.sixamtech.ridesharinguser.rideSharingUserApp',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDsmQl4bCItrpTaMp6ahkTnNiuKvbGo8g8',
+    appId: '1:556271392691:web:0813d285599785305cddc6',
+    messagingSenderId: '556271392691',
+    projectId: 'cabtale-7',
+    authDomain: 'cabtale-7.firebaseapp.com',
+    storageBucket: 'cabtale-7.firebasestorage.app',
+    measurementId: 'G-220L0Z0F0M',
+  );
+
 }

@@ -53,6 +53,10 @@ class ExpandableBottomSheet extends StatefulWidget {
   /// and [persistentFooter] will not be affected by this.
   final double persistentContentHeight;
 
+  /// [initialExpansionFactor] controls the initial position of the sheet.
+  /// `1.0` means fully contracted (default), `0.0` means fully expanded.
+  final double initialExpansionFactor;
+
   /// [animationDurationExtend] is the duration for the animation if you stop
   /// dragging with high speed.
   final Duration animationDurationExtend;
@@ -88,6 +92,7 @@ class ExpandableBottomSheet extends StatefulWidget {
     this.persistentHeader,
     this.persistentFooter,
     this.persistentContentHeight = 0.0,
+    this.initialExpansionFactor = 1.0,
     this.animationCurveExpand = Curves.ease,
     this.animationCurveContract = Curves.ease,
     this.animationDurationExtend = const Duration(milliseconds: 250),
@@ -95,7 +100,8 @@ class ExpandableBottomSheet extends StatefulWidget {
     this.onIsExtendedCallback,
     this.onIsContractedCallback,
     this.enableToggle = false,
-  })  : assert(persistentContentHeight >= 0);
+  })  : assert(persistentContentHeight >= 0),
+        assert(initialExpansionFactor >= 0.0 && initialExpansionFactor <= 1.0);
 
   @override
   ExpandableBottomSheetState createState() => ExpandableBottomSheetState();
@@ -260,8 +266,9 @@ class ExpandableBottomSheetState extends State<ExpandableBottomSheet>
       _positionOutOfBounds();
     } else {
       setState(() {
-        _positionOffset = _maxOffset;
         _draggableHeight = _maxOffset - _minOffset;
+        final factor = widget.initialExpansionFactor.clamp(0.0, 1.0).toDouble();
+        _positionOffset = _minOffset + factor * _draggableHeight;
       });
     }
   }

@@ -51,10 +51,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void initState() {
     super.initState();
     final cfg = Get.find<ConfigController>().config;
-    if (cfg?.countryCode != null) {
-      Get.find<AuthController>().countryDialCode =
-      CountryCode.fromCountryCode(cfg!.countryCode!).dialCode!;
-    }
+    final countryCode = (cfg?.countryCode != null && cfg!.countryCode!.trim().isNotEmpty)
+        ? cfg.countryCode!.trim()
+        : 'IN';
+    Get.find<AuthController>().countryDialCode =
+        CountryCode.fromCountryCode(countryCode).dialCode ?? '+91';
   }
 
   // Navigation
